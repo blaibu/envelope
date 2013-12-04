@@ -1,0 +1,17 @@
+<div class="hidden alert alert-error" id="form-error-region"></div>
+<div class="hidden alert alert-success" id="form-success-region"></div>
+<div id="form-content-region"></div>
+<% if @footer: %>
+	<footer>
+		<% if @buttons: %>
+			<ul class="inline-list">
+				<% for button in @buttons: %>
+					<li>
+						<button type="<%= button.buttonType %>" data-form-button="<%= button.type %>" class="<%= button.className %>"><%= button.text %></button>
+					</li>
+				<% end %>
+			</ul>
+			<br style="clear:both;"/>
+		<% end %>
+	</footer>
+<% end %>

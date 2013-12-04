@@ -1,0 +1,57 @@
+<%= include_gon %>
+<div class="container">
+	<div id="header-region" class="row"></div>
+	<div id="breadcrumb-region" class="row"></div>
+	<div id="flash-region" class="row"></div>
+	<div id="main-region" class="row"></div>
+	<div class="modal" id="modal-region"></div>
+</div>
+
+<%= javascript_tag do %>
+  var appStorage;
+
+  var memoryStorage = {
+    store: {},
+    setItem: function(k, v){
+      memoryStorage.store[k] = v;
+    },
+    removeItem: function(k) {
+      delete memoryStorage.store[k];
+    },
+    getItem: function(k){
+      return memoryStorage.store[k];
+    },
+    clear: function(){
+      memoryStorage.store = {};
+    }
+  };
+
+  try {
+    localStorage.setItem("test", "test");
+    localStorage.removeItem("test");
+    appStorage = localStorage;
+  } catch (e) {
+    try{
+      sessionStorage.setItem("test","test");
+      sessionStorage.removeItem("test");
+      appStorage = appStorage;
+    } catch (e) {
+      appStorage = memoryStorage;
+    } 
+  }
+
+  if (gon.hostConfig.protocol != window.location.protocol+'//') {
+    window.location = gon.hostConfig.protocol + window.location.host + window.location.pathname + window.location.hash
+    } else {
+    $(function() {
+    //gon.clientApplication.browser = $.ua.browser.name;
+    //gon.clientApplication.user_agent = $.ua.get();
+      Envelope.start({
+        environment: "<%= Rails.env %>",
+        user: {auth_token: (appStorage.getItem("auth_token") || "") },
+        clientApplication: gon.clientApplication
+      });
+    });
+  }
+
+<% end %>

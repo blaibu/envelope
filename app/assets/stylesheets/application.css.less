@@ -8,6 +8,21 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+ *= require twitter/bootstrap
+ *= require_tree ../../../vendor/assets/stylesheets
  */
+
+@import "flatui/flat-ui.less";
+@import "utils/_vars.css.less";
+
+@import "comps/_base.css.less";
+@import "comps/_forms.css.less";
+@import "comps/_breadcrumbs.css.less";
+@import "comps/_images.css.less";
+@import "comps/_modal.css.less";
+@import "comps/_loading.css.less";
+@import "comps/_panels.css.less";
+
+@import "apps/_base.css.less";
+@import "apps/header.css.less";
+@import "apps/dashboard.css.less";

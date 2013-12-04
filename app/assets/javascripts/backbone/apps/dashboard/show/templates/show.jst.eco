@@ -1,0 +1,50 @@
+<div style="margin-top:30px;" data-step="1" data-intro="Welcome to DoNotTrackMe!  This is the dashboard where you'll be able to access and manage all your masked info." id="dashboard-icons-region" class="row"> 
+	<div class="row">
+        <div class="col-sm-2 hidden-xs"></div>
+        <div data-step="2" data-intro="Click here when you want to create or manage Masked Emails." class="dashboard-icon-cnt col-sm-4 col-xs-6">
+            <a href="<%= @iconHref('/#/emails',true)%>">
+                <div class="dashboard-icon email-icon">
+                    <h4>Masked Emails</h4>
+                    <p>Goodbye Spam</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="dashboard-icon-cnt col-sm-4 col-xs-6">
+            <a href="<%= @iconHref('/#/phones',@isPremium, 'phone')%>">
+                <div class="dashboard-icon phone-icon">
+                    <h4>Masked Phones</h4>
+                    <p>No more 8am telemarketing.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 hidden-xs"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 hidden-xs"></div>
+        <div class="dashboard-icon-cnt col-sm-4 col-xs-6">
+            <a href="<%= @iconHref('/#/cards',@isPremium, 'card')%>">
+                <div class="dashboard-icon card-icon">
+                    <h4>Masked Cards</h4>
+                    <p>Control who charges you.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="dashboard-icon-cnt col-sm-4 col-xs-6">
+            <a href="<%= @iconHref('/#/stats',true)%>">
+                <div class="dashboard-icon stats-icon">
+                    <h4>Tracker Blocker</h4>
+                    <p>Private browsing.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2 hidden-xs"></div>
+    </div>
+</div>
+<div id="marketing-message-region" class="row">
+
+</div>
+<div id="dashboard-footer-region" class="row hidden-xs">
+	<a href="javascript:void(0);" id="getting-started-guide"><i class="fui-info"></i> Getting Started Guide</a>
+</div>

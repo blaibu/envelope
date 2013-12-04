@@ -1,0 +1,14 @@
+<div class="col-sm-<%= @columnWidth %> col-sm-offset-<%= @columnOffset %>">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h6><%= @title %></h6>
+        </div>
+        <div class="panel-body" style="overflow-y:auto;" id="modal-content-region"></div>
+        <% if !@hideFooter: %>
+            <div class="panel-footer" style="text-align:right;">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        <% end %>
+    </div>
+</div>

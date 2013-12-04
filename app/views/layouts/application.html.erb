@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" style="overflow-x:hidden;" envelope_webapp="true">
 <head>
   <title>Envelope</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link rel="icon" type="image/ico" href="https://abine.com/favicon.ico"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta property="og:title" content="Envelope: Speak Secretly" />
+  <meta property="og:image" content="https://d1p4fa0g2cgyhv.cloudfront.net/images/web-v2/abine_logo.png" />
+  <meta property="og:image:secure_url" content="https://d1p4fa0g2cgyhv.cloudfront.net/images/web-v2/abine_logo.png" />
+  <meta property="og:description" content="Use private email addresses, phone numbers, and credit cards. Keep your info safe from companies, hackers, fraudsters, and spammers." />
 </head>
-<body>
-
+<body style="overflow-x:hidden;">
 <%= yield %>
-
 </body>
 </html>
